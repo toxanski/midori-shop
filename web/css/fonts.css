@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'DINPro-Light';
+    src: url('/web/fonts/DINPro-Light.ttf');
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'DINPro';
+    src: url('/web/fonts/DINPro.ttf');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'DINPro-Medium';
+    src: url('/web/fonts/DINPro-Medium.ttf');
+    font-style: normal;
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'DINPro-Bold';
+    src: url('/web/fonts/DINPro-Bold.ttf');
+    font-style: normal;
+    font-weight: 700;
+}

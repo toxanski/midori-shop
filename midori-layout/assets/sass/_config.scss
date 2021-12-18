@@ -1,0 +1,88 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'DINPro-Light';
+  src: url('../fonts/DINPro-Light.ttf');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'DINPro';
+  src: url('../fonts/DINPro.ttf');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'DINPro-Medium';
+  src: url('../fonts/DINPro-Medium.ttf');
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'DINPro-Bold';
+  src: url('../fonts/DINPro-Bold.ttf');
+  font-style: normal;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: #111111;
+  transition: .2s ease-in-out;
+
+  &:hover {
+    color: #FF9846;
+  }
+}
+
+.button-primary {
+  font-family: "DINPro-Medium", "sans-serif";
+  color: #f2f2f2;
+  font-size: 24px;
+  line-height: 40px;
+  border-radius: 5px;
+  background-color: #F46D40;
+  padding: 0 42px;
+  outline: none;
+  border: none;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #FF9846;
+  }
+}
+
+%text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 120%;
+  color: #a4acad;
+  padding: 10px 0;
+}
+
+.text {
+  @extend %text;
+}
+
+.h6 {
+  @extend %text;
+}
+
+.primary-color {
+  color: #FF9846;
+}
+
+$orange-default: #FF9846;
+$grey-light: #F2F2F2;
+$black: #111111;
+$grey: #A4ACAD;
+$orange-premium: #F46D40;
+$white: #FFFFFF;
+
