@@ -1,8 +1,7 @@
 module.exports = {
   content: [
-      "./views/**/*.php",
-      "./web/js/**/*.js"
-  ],
+      "../views/**/*.php",
+      "./dist/**/*.js",],
   theme: {
     extend: {},
   },

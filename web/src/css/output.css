@@ -423,274 +423,335 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-@import "config";
-
-body {
-  font-family: 'DINPro', 'serif';
+*,*::before,*::after{
+  margin:0;
+  padding:0;
+  box-sizing:border-box
 }
 
-.search-error {
-  text-align: center;
-  margin-top: 2em;
+.link{
+  text-decoration:none;
+  color:#111;
+  transition:.2s ease-in-out
 }
 
-.page {
-  display: grid;
-  grid-template-columns: minmax(auto, 320px) minmax(1170px, 1fr) minmax(auto, 430px);
-  min-height: 100vh;
+.link:hover{
+  color:#ff9846
 }
 
-.side-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.button-primary{
+  font-family:"DINPro-Medium","sans-serif";
+  color:#f2f2f2;
+  font-size:24px;
+  line-height:40px;
+  border-radius:5px;
+  background-color:#f46d40;
+  padding:0 42px;
+  outline:none;
+  border:none;
+  transition:.3s ease-in-out;
+  cursor:pointer
 }
 
-.logo {
-  margin: 26px 0 30px 0;
+.button-primary:hover{
+  background-color:#ff9846
 }
 
-.navbar {
-  border-top: 2px solid $grey;
-  padding: 30px 0 0 20px;
-  list-style: none;
-  .navbar__item {
-    margin-bottom: 30px;
-    &-img {
-      fill: #F46D40;
-    }
-    &-text {
-      font-size: 24px;
-      margin-left: 20px;
-    }
-  }
-  .navbar__link {
-    display: flex;
-    align-items: center;
-    transition: .3s ease-in-out;
-    &:hover, &:focus, &:focus-within {
-      .navbar__item-img {
-        left: -5px;
-      }
-    }
-  }
-  .navbar__item-img {
-    position: relative;
-    transition: .3s ease-in-out;
-  }
+.h6,.text{
+  font-size:18px;
+  font-weight:400;
+  line-height:120%;
+  color:#a4acad;
+  padding:10px 0
 }
 
-.cart-side-block {
-  margin: 60px auto 0 auto;
-  width: 100%;
-  padding: 0 10px;
-  &__cart {
-    display: flex;
-    justify-content: center;
-    max-width: 290px;
-    max-height: 140px;
-    cursor: pointer;
-  }
+.primary-color{
+  color:#ff9846
 }
 
-.empty-cart {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  //background-color: $grey-light;
-  &__title {
-    font-size: 24px;
-    color: $black;
-    margin-top: 12px;
-  }
-  &__subtitle {
-    font-size: 18px;
-    color: $grey;
-    font-weight: 400;
-    margin: 12px 12px 0 12px;
-  }
-  &__delivery {
-    display: none;
-    width: 100%;
-    margin-top: 26px;
-    background-color: $orange-default;
-    text-align: center;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    &-text {
-      font-size: 14px;
-      color: $grey-light;
-      padding: 12px 0;
-    }
-  }
+body{
+  font-family:"DINPro","serif"
 }
 
-.fill-cart {
-  display: none;
+.search-error{
+  text-align:center;
+  margin-top:2em
 }
 
-.main {
-  background-color: $grey-light;
-  padding: 0 40px;
-  display: grid;
-  grid-template-rows: 94px 1fr 270px;
-  grid-template-areas:
-          "header"
-          "content"
-          "footer";
+.page{
+  display:grid;
+  grid-template-columns:minmax(auto, 320px) minmax(1170px, 1fr) minmax(auto, 430px);
+  min-height:100vh
 }
 
-.header {
-  grid-area: header;
-  display: flex;
-  align-items: center;
-  border-bottom: .5px solid $grey;
-  .header-phone {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    border-right: .5px solid $grey;
-    padding: 10px 20px 10px 20px;
-    text-align: center;
-    &__title {
-      font-size: 18px;
-      color: $black;
-    }
-    &__phone-number {
-      font-size: 18px;
-      color: $orange-default;
-    }
-    &__work-hours {
-      display: flex;
-      align-items: center;
-      font-size: 14px;
-      color: $grey;
-    }
-    &__img {
-      margin-right: 5px;
-    }
-  }
-  .user-info {
-    padding-left: 20px;
-    width: calc(100% - 244px);
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    &__city {
-      margin-right: auto;
-    }
-    .city-info {
-      &__title {
-        color: $grey;
-        font-size: 14px;
-        font-family: "DINPro-Light", "sans-serif";
-      }
-      &__name {
-        font-size: 18px;
-        color: $black;
-      }
-    }
-    &__delivery {
-      cursor: pointer;
-      margin-right: 70px;
-    }
-    &__search {
-      margin-right: 40px;
-    }
-    .search-ico {
-      cursor: pointer;
-    }
-  }
+.side-menu{
+  display:flex;
+  flex-direction:column;
+  align-items:center
 }
 
-.content {
-  grid-area: content;
-  padding-top: 30px;
-  .product-list-container {
-    margin: 0 auto;
-    &__title {
-      font-size: 36px;
-      font-weight: 400;
-    }
-  }
+.logo{
+  margin:26px 0 30px 0
 }
 
-.product-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px 2em;
+.navbar{
+  border-top:2px solid #a4acad;
+  padding:30px 0 0 20px;
+  list-style:none
 }
 
-.product {
-  justify-self: center;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: $white;
-  border-radius: 8px;
-  box-shadow: 0 3px 8px rgb(0 0 0 / 5%);
-  border: 1px solid $grey-light;
-  transition: all .3s ease-in-out;
-  padding: 0 18px;
-  margin-top: 30px;
-  cursor: pointer;
-  max-width: 450px;
-  width: 100%;
-  &:hover {
-    box-shadow: 0 6px 26px rgb(0 0 0 / 9%);
-  }
-  &__img {
-    margin: 0 auto;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-  }
-  &__name {
-    font-size: 24px;
-    font-weight: 600;
-    color: $black;
-    margin-top: 30px;
-  }
-  &__description {
-    margin-top: 30px;
-    color: $grey;
-  }
-  &__footer {
-    width: 100%;
-    border-top: 1px solid $grey;
-    margin-top: 30px;
-    padding: 12px 0;
-  }
-  &__price {
-    font-family: "DINPro-Medium", "sans-serif";
-    font-size: 24px;
-    float: left;
-    padding-top: 5px;
-  }
-  &__button {
-    float: right;
-  }
+.navbar .navbar__item{
+  margin-bottom:30px
 }
 
-.about {
-  &__title {
-    font-size: 24px;
-    color: $grey;
-  }
-  .list-block {
-    padding-left: 36px;
-  }
+.navbar .navbar__item-img{
+  fill:#f46d40
 }
 
-.footer {
-  grid-area: footer;
+.navbar .navbar__item-text{
+  font-size:24px;
+  margin-left:20px
 }
 
+.navbar .navbar__link{
+  display:flex;
+  align-items:center;
+  transition:.3s ease-in-out
+}
 
+.navbar .navbar__link:hover .navbar__item-img,.navbar .navbar__link:focus .navbar__item-img,.navbar .navbar__link:focus-within .navbar__item-img{
+  left:-5px
+}
 
+.navbar .navbar__item-img{
+  position:relative;
+  transition:.3s ease-in-out
+}
 
+.cart-side-block{
+  margin:60px auto 0 auto;
+  width:100%;
+  padding:0 10px
+}
 
+.cart-side-block__cart{
+  display:flex;
+  justify-content:center;
+  max-width:290px;
+  max-height:140px;
+  cursor:pointer
+}
 
+.empty-cart{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  border-radius:5px
+}
+
+.empty-cart__title{
+  font-size:24px;
+  color:#111;
+  margin-top:12px
+}
+
+.empty-cart__subtitle{
+  font-size:18px;
+  color:#a4acad;
+  font-weight:400;
+  margin:12px 12px 0 12px
+}
+
+.empty-cart__delivery{
+  display:none;
+  width:100%;
+  margin-top:26px;
+  background-color:#ff9846;
+  text-align:center;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px
+}
+
+.empty-cart__delivery-text{
+  font-size:14px;
+  color:#f2f2f2;
+  padding:12px 0
+}
+
+.fill-cart{
+  display:none
+}
+
+.main{
+  background-color:#f2f2f2;
+  padding:0 40px;
+  display:grid;
+  grid-template-rows:94px 1fr 270px;
+  grid-template-areas:"header" "content" "footer"
+}
+
+.header{
+  grid-area:header;
+  display:flex;
+  align-items:center;
+  border-bottom:.5px solid #a4acad
+}
+
+.header .header-phone{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  height:100%;
+  border-right:.5px solid #a4acad;
+  padding:10px 20px 10px 20px;
+  text-align:center
+}
+
+.header .header-phone__title{
+  font-size:18px;
+  color:#111
+}
+
+.header .header-phone__phone-number{
+  font-size:18px;
+  color:#ff9846
+}
+
+.header .header-phone__work-hours{
+  display:flex;
+  align-items:center;
+  font-size:14px;
+  color:#a4acad
+}
+
+.header .header-phone__img{
+  margin-right:5px
+}
+
+.header .user-info{
+  padding-left:20px;
+  width:calc(100% - 244px);
+  display:flex;
+  justify-content:flex-end;
+  align-items:center
+}
+
+.header .user-info__city{
+  margin-right:auto
+}
+
+.header .user-info .city-info__title{
+  color:#a4acad;
+  font-size:14px;
+  font-family:"DINPro-Light","sans-serif"
+}
+
+.header .user-info .city-info__name{
+  font-size:18px;
+  color:#111
+}
+
+.header .user-info__delivery{
+  cursor:pointer;
+  margin-right:70px
+}
+
+.header .user-info__search{
+  margin-right:40px
+}
+
+.header .user-info .search-ico{
+  cursor:pointer
+}
+
+.content{
+  grid-area:content;
+  padding-top:30px
+}
+
+.content .product-list-container{
+  margin:0 auto
+}
+
+.content .product-list-container__title{
+  font-size:36px;
+  font-weight:400
+}
+
+.product-list{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:15px 2em
+}
+
+.product{
+  justify-self:center;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  background-color:#fff;
+  border-radius:8px;
+  box-shadow:0 3px 8px rgba(0,0,0,.05);
+  border:1px solid #f2f2f2;
+  transition:all .3s ease-in-out;
+  padding:0 18px;
+  margin-top:30px;
+  cursor:pointer;
+  max-width:450px;
+  width:100%
+}
+
+.product:hover{
+  box-shadow:0 6px 26px rgba(0,0,0,.09)
+}
+
+.product__img{
+  margin:0 auto;
+  background-size:cover;
+  width:100%;
+  height:100%
+}
+
+.product__name{
+  font-size:24px;
+  font-weight:600;
+  color:#111;
+  margin-top:30px
+}
+
+.product__description{
+  margin-top:30px;
+  color:#a4acad
+}
+
+.product__footer{
+  width:100%;
+  border-top:1px solid #a4acad;
+  margin-top:30px;
+  padding:12px 0
+}
+
+.product__price{
+  font-family:"DINPro-Medium","sans-serif";
+  font-size:24px;
+  float:left;
+  padding-top:5px
+}
+
+.product__button{
+  float:right
+}
+
+.about__title{
+  font-size:24px;
+  color:#a4acad
+}
+
+.about .list-block{
+  padding-left:36px
+}
+
+.footer{
+  grid-area:footer
+}

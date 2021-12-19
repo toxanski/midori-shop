@@ -35,6 +35,7 @@ AppAsset::register($this);
     <main class="main">
         <header class="header">
             <div class="header-phone header__phone">
+                <p class="text-3xl font-bold underline text-green-500">123</p>
                 <h3 class="header-phone__title">Наш телефон</h3>
                 <h3 class="header-phone__phone-number">+7 987-414-44-44</h3>
                 <div class="header-phone__work-hours">
