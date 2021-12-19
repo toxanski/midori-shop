@@ -1,11 +1,12 @@
 <?php
-
+use app\assets\AdminAsset;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Good */
-
+AdminAsset::register($this);
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Goods', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;

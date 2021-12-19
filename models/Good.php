@@ -64,6 +64,11 @@ class Good extends \yii\db\ActiveRecord
         return $goods;
     }
 
+    public function getOneGood($name)
+    {
+      return Good::find()->where(['link_name' => $name])->one();
+    }
+
     public function getGoodsByCategory($productId)
     {
         $goodsCategory = Good::find()

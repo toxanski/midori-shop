@@ -1,5 +1,6 @@
 <?php
-
+use app\assets\AdminAsset;
+AdminAsset::register($this);
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 

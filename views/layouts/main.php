@@ -35,7 +35,6 @@ AppAsset::register($this);
     <main class="main">
         <header class="header">
             <div class="header-phone header__phone">
-                <p class="text-3xl font-bold underline text-green-500">123</p>
                 <h3 class="header-phone__title">Наш телефон</h3>
                 <h3 class="header-phone__phone-number">+7 987-414-44-44</h3>
                 <div class="header-phone__work-hours">
@@ -49,12 +48,18 @@ AppAsset::register($this);
                     <div class="city-info__name text-green-500">Йошкар-Ола</div>
                 </div>
                 <div class="user-info__delivery"><a class="user-info__link link">Доставка и оплата</a></div>
-                <img src="<?= Yii::getAlias('@img/Search_ico.png')?>" alt=""  class="search-ico__img" />
-                <form class="search-ico user-info__search form-group" action="<?= Url::to(['category/search']) ?>" method="get">
-                    <input type="text" class="input form-controlss" placeholder="Поиск..." name="searchInput" />
+                
+                <form class="search-ico user-info__search" action="<?= Url::to(['category/search']) ?>" method="get">
+                    <input
+                     type="text"
+                     class="input form-controlss appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-orange-500 focus:border-orange-500 focus:z-10 sm:text-sm"
+                     placeholder="Поиск..."
+                     name="searchInput" />
+                     <button type="submit" class="ml-1"><img src="<?= Yii::getAlias('@img/Search_ico.png')?>" alt=""  class="search-ico__img" /></button>
                 </form>
             </div>
         </header>
+
         <section class="content">
             <?= $content?>
         </section>
@@ -75,11 +80,11 @@ AppAsset::register($this);
                 В меню также представлены гунканы: с начинкой из красной икры и тобико, а также феликсы, где японский майонез сочетается с рыбой, морепродуктами, угрем. Любители острых блюд могут купить суши с соусом спайси. Популярные начинки — копченая курица, снежный краб, креветки, гребешки, тунец, лосось и окунь.
             </p>
         </section>
-        <footer class="footer">
+        <footer class="footer" style="display:none">
 
         </footer>
     </main>
-    <aside class="cart-side-block">
+    <aside class="cart-side-block" style="display: none">
         <section class="empty-cart cart-side-block__cart">
             <h2 class="empty-cart__title">Ваша корзина пуста.</h2>
             <h3 class="empty-cart__subtitle">Добавьте же скорее что-нибудь!</h3>

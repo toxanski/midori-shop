@@ -1,9 +1,15 @@
 module.exports = {
   content: [
-      "../views/**/*.php",
-      "./dist/**/*.js",],
+    "../views/**/*.php",
+    "../widgets/template/*.php",
+    "../modules/**/views/**/*.php",
+    "./*.html",
+    "./dist/**/*.js",],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio')
+  ],
 }

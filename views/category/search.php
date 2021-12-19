@@ -1,3 +1,7 @@
+<?php
+use yii\helpers\Url;
+?>
+
 <div class="product-list-container">
     <h1 class="product-list-container__title">Результаты поиска по запросу: "<?= $search;?>"</h1>
     <?php if ($goodSearchResults) { ?>
@@ -7,7 +11,7 @@
                     <div class="product product-list__product">
                         <img src="<?= Yii::getAlias('@img/') . $good['img']?>" alt="" class="product__img">
                         <h2 class="product__name">
-                            <a href="/<?= $good['link_name']?>" class="link"><?= $good['name']?></a>
+                            <a href="<?= Url::to(['good/index', 'name' => $good['link_name']]); ?>" class="link"><?= $good['name']?></a>
                         </h2>
                         <span class="product__description"><?= $good['descr']?></span>
                         <div class="product__footer">

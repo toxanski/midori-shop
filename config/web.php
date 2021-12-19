@@ -11,8 +11,8 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
-        '@img' => '/web/img',
-        '@fonts' => '/web/fonts'
+        '@img' => '/web/src/img',
+        '@fonts' => '/web/src/fonts'
     ],
     'components' => [
         'request' => [
@@ -51,6 +51,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+              'good/<name>' => 'good/index'
             ],
         ],
     ],
