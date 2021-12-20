@@ -107,7 +107,8 @@ body {
 }
 
 .fill-cart {
-  display: none;
+  display: flex;
+  justify-content: center;
 }
 
 .main {
@@ -123,6 +124,7 @@ body {
 .header {
   grid-area: header;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   border-bottom: .5px solid $grey;
   .header-phone {
@@ -174,7 +176,7 @@ body {
 
     &__delivery {
       cursor: pointer;
-      margin-right: 70px;
+      margin-right: 40px;
     }
     &__search {
       margin-right: 40px;
@@ -271,6 +273,15 @@ body {
     padding-left: 36px;
   }
 }
+
+.modal {
+  transition: opacity 0.25s ease;
+}
+body.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}
+.opacity-95 {opacity: .95;}
 
 .footer {
   grid-area: footer;

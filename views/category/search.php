@@ -13,10 +13,10 @@ use yii\helpers\Url;
                         <h2 class="product__name">
                             <a href="<?= Url::to(['good/index', 'name' => $good['link_name']]); ?>" class="link"><?= $good['name']?></a>
                         </h2>
-                        <span class="product__description"><?= $good['descr']?></span>
+                        <span class="product__description"><?= $good['composition']?></span>
                         <div class="product__footer">
                             <span class="product__price"><?= $good['price']?> руб.</span>
-                            <button class="product__button button-primary">Хочу</button>
+                            <a href="" data-name="<?=$good['link_name']?>" class="product__button button-primary">Хочу</a>
                         </div>
                     </div>
                 <?php } ?>

@@ -26,6 +26,7 @@ class AdminAsset extends AssetBundle
 
     ];
     public $js = [
+        'web/dist/script.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

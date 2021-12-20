@@ -47,15 +47,22 @@ AppAsset::register($this);
                     <div class="city-info__title">Город:</div>
                     <div class="city-info__name text-green-500">Йошкар-Ола</div>
                 </div>
-                <div class="user-info__delivery"><a class="user-info__link link">Доставка и оплата</a></div>
+                <div class="user-info__delivery"><a href="#" class="user-info__link link">Доставка и оплата</a></div>
+                <button class="modal-open bg-transparent text-black hover:text-orange-500">Корзина</button>
                 
-                <form class="search-ico user-info__search" action="<?= Url::to(['category/search']) ?>" method="get">
+                <form class="search-ico user-info__search flex border-1 border-orange-500 rounded" action="<?= Url::to(['category/search']) ?>" method="get">
                     <input
                      type="text"
-                     class="input form-controlss appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-orange-500 focus:border-orange-500 focus:z-10 sm:text-sm"
+                     class="px-4 py-2 w-40 focus:outline outline-orange-500 border-orange-500 focus:border-orange-500 focus:shadow-none"
                      placeholder="Поиск..."
                      name="searchInput" />
-                     <button type="submit" class="ml-1"><img src="<?= Yii::getAlias('@img/Search_ico.png')?>" alt=""  class="search-ico__img" /></button>
+                     <button type="submit" class="px-4 text-white bg-orange-500 border-l">
+<!--                         <img src="--><?//= Yii::getAlias('@img/Search_ico.png')?><!--" alt=""  class="search-ico__img" />-->
+                         <svg class="w-6 h-6 text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24">
+                             <path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                         </svg>
+                     </button>
                 </form>
             </div>
         </header>
@@ -84,8 +91,8 @@ AppAsset::register($this);
 
         </footer>
     </main>
-    <aside class="cart-side-block" style="display: none">
-        <section class="empty-cart cart-side-block__cart">
+    <aside class="cart-side-block">
+        <section class="empty-cart cart-side-block__cart" style="display: none">
             <h2 class="empty-cart__title">Ваша корзина пуста.</h2>
             <h3 class="empty-cart__subtitle">Добавьте же скорее что-нибудь!</h3>
             <div class="empty-cart__delivery">
@@ -96,7 +103,37 @@ AppAsset::register($this);
 
         </section>
     </aside>
-</div>
+
+    <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
+        <div class="modal-overlay absolute w-full h-full bg-white opacity-95"></div>
+
+        <div class="modal-container fixed w-full h-full z-50 overflow-y-auto ">
+
+            <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-black text-sm z-50">
+                <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                    <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                </svg>
+                (Esc)
+            </div>
+
+            <div class="modal-content container mx-auto h-auto text-left p-4">
+
+                <div class="flex justify-between items-center pb-2">
+                    <p class="text-2xl font-bold">Ваша корзина:</p>
+                </div>
+
+                <div class="modal-table cart">
+
+                </div>
+
+                <div class="flex justify-end pt-2">
+                    <button class="px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Очистить корзину</button>
+                    <button class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">Закрыть</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 <?php $this->endBody() ?>
 </body>
