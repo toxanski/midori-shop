@@ -2,9 +2,7 @@
 use \yii\helpers\Url;
 
 ?>
-<!--<pre>-->
-<!--    --><?php //var_dump($session['cart']);?>
-<!--</pre>-->
+
 <?php if (!$session['cart']) {
     echo "<h3>Пусто :(</h3>";
 } else { ?>
@@ -27,6 +25,7 @@ use \yii\helpers\Url;
                             <th scope="col" class="px-6 py-3 text-left text-s font-medium text-gray-500 uppercase tracking-wider">
                                 Цена
                             </th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
@@ -61,6 +60,9 @@ use \yii\helpers\Url;
                                     <td class="px-6 py-4 whitespace-nowrap text-lg text-gray-500">
                                         <?= $goodItem['price'] * $goodItem['goodQuantity']; ?>
                                     </td>
+                                    <td class="mr-8 cursor-pointer">
+                                        <svg class="remove-product" data-id="<?= $id;?>" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><path fill="#F44336" d="M21.5 4.5H26.501V43.5H21.5z" transform="rotate(45.001 24 24)"/><path fill="#F44336" d="M21.5 4.5H26.5V43.501H21.5z" transform="rotate(135.008 24 24)"/></svg>
+                                    </td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -69,7 +71,7 @@ use \yii\helpers\Url;
             </div>
             <div class="px-6 py-4 whitespace-nowrap flex items-end flex-col justify-center">
                 <div class="cart-total">
-                    <h3 class="text-lg font-medium inline-block mr-4">Всего товаров: </h3><span class="text-lg"><?= $session['cart.totalQuantity']; ?></span>
+                    <h3 class="text-lg font-medium inline-block mr-4">Всего товаров: </h3><span class="text-lg cart-total__count"><?= $session['cart.totalQuantity']; ?></span>
                 </div>
                 <div class="cart-summary">
                     <h3 class="text-lg font-medium inline-block mr-4">На сумму: </h3><span class="text-lg"><?= $session['cart.totalSummary']; ?></span>

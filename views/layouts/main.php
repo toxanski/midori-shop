@@ -48,7 +48,10 @@ AppAsset::register($this);
                     <div class="city-info__name text-green-500">Йошкар-Ола</div>
                 </div>
                 <div class="user-info__delivery"><a href="#" class="user-info__link link">Доставка и оплата</a></div>
-                <button class="modal-open bg-transparent text-black hover:text-orange-500">Корзина</button>
+                <button class="modal-open bg-transparent text-black hover:text-orange-500">
+                    Корзина
+                    <span class="user-info__cart-quantity">(<?= $_SESSION['cart.totalQuantity'] ? $_SESSION['cart.totalQuantity'] : 0;?>)</span>
+                </button>
                 
                 <form class="search-ico user-info__search flex border-1 border-orange-500 rounded" action="<?= Url::to(['category/search']) ?>" method="get">
                     <input
@@ -127,7 +130,7 @@ AppAsset::register($this);
                 </div>
 
                 <div class="flex justify-end pt-2">
-                    <button class="px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Очистить корзину</button>
+                    <button class="modal-clear px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Очистить корзину</button>
                     <button class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">Закрыть</button>
                 </div>
 
