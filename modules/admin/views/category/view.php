@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use app\assets\AdminAsset;
+AdminAsset::register($this);
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Category */

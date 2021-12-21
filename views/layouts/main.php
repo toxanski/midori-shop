@@ -48,8 +48,8 @@ AppAsset::register($this);
                     <div class="city-info__name text-green-500">Йошкар-Ола</div>
                 </div>
                 <div class="user-info__delivery"><a href="#" class="user-info__link link">Доставка и оплата</a></div>
-                <button class="modal-open bg-transparent text-black hover:text-orange-500">
-                    Корзина
+                <button class="modal-open bg-transparent text-black hover:text-orange-500 user-info__cart mr-4">
+                    <img src="<?= Yii::getAlias('@img/shopping-cart.png')?>" alt="" class="user-info__cart-img">
                     <span class="user-info__cart-quantity">(<?= $_SESSION['cart.totalQuantity'] ? $_SESSION['cart.totalQuantity'] : 0;?>)</span>
                 </button>
                 
@@ -90,22 +90,34 @@ AppAsset::register($this);
                 В меню также представлены гунканы: с начинкой из красной икры и тобико, а также феликсы, где японский майонез сочетается с рыбой, морепродуктами, угрем. Любители острых блюд могут купить суши с соусом спайси. Популярные начинки — копченая курица, снежный краб, креветки, гребешки, тунец, лосось и окунь.
             </p>
         </section>
-        <footer class="footer" style="display:none">
-
+        <footer class="footer pt-14 pb-10">
+            <ul class="footer__titles flex justify-start items-start flex-col pl-12">
+                <li class="footer__title-name my-2"><a href="#" class="footer__link link">О компании</a></li>
+                <li class="footer__title-name my-2"><a href="#" class="footer__link link">Доставка и оплата</a></li>
+                <li class="footer__title-name my-2"><a href="#" class="footer__link link">Лента материалов</a></li>
+                <li class="footer__title-name my-2"><a href="#" class="footer__link link">Политика возврата</a></li>
+            </ul>
+            <div class="footer__social social flex flex-col justify-start items-start">
+                <h4 class="social__title mb-3">Выберете удобный мессенджер для общения</h4>
+                <div class="social__icons flex justify-center items-center">
+                    <div class="social__button mx-3">
+                        <img src="<?= Yii::getAlias('@img/telegram.png')?>" alt="" class="social__ico">
+                    </div>
+                    <div class="social__button mx-3">
+                        <img src="<?= Yii::getAlias('@img/inst.png')?>" alt="" class="social__ico">
+                    </div>
+                    <div class="social__button mx-3">
+                        <img src="<?= Yii::getAlias('@img/vk.png')?>" alt="" class="social__ico">
+                    </div>
+                </div>
+            </div>
+            <div class="footer__phone phone flex flex-col justify-start items-start">
+                <span class="phone__text mb-3">Тел:+8 987-999-99-11</span>
+                <span class="phone__text mb-3">Тел:+8 987-941-96-01</span>
+                <span class="phone__text mb-3">Адрес:Палантая 85А</span>
+            </div>
         </footer>
     </main>
-    <aside class="cart-side-block">
-        <section class="empty-cart cart-side-block__cart" style="display: none">
-            <h2 class="empty-cart__title">Ваша корзина пуста.</h2>
-            <h3 class="empty-cart__subtitle">Добавьте же скорее что-нибудь!</h3>
-            <div class="empty-cart__delivery">
-                <p class="empty-cart__delivery-text">Бесплатная доставка от 600руб.</p>
-            </div>
-        </section>
-        <section class="fill-cart cart-side-block__cart">
-
-        </section>
-    </aside>
 
     <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
         <div class="modal-overlay absolute w-full h-full bg-white opacity-95"></div>

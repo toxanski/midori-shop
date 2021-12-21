@@ -3,7 +3,7 @@ use yii\helpers\Url;
 ?>
 
 <div class="product-list-container">
-    <h1 class="product-list-container__title">Сеты</h1>
+
     <div class="product-list">
         <?php foreach ($allGoods as $good) { ?>
         <div class="product product-list__product">
