@@ -1,0 +1,32 @@
+<?php
+
+namespace app\models;
+
+use yii\db\ActiveRecord;
+
+class Cart extends ActiveRecord
+{
+    public function addToCart($good)
+    {
+        // счетчик на количество товара
+        if ( isset($_SESSION['cart'][$good->id]) ) {
+            $_SESSION['cart'][$good->id]['goodQuantity'] += 1;
+        } else {
+            $_SESSION['cart'][$good->id] = [
+                'goodQuantity' => 1,
+                'name' => $good['name'],
+                'composition' => $good['composition'],
+                'price' => $good['price'],
+                'img' => $good['img']
+            ];
+        }
+
+        $_SESSION['cart.totalQuantity'] = isset($_SESSION['cart.totalQuantity'])
+            ? $_SESSION['cart.totalQuantity'] + 1
+            : 1;
+
+        $_SESSION['cart.totalSummary'] = isset($_SESSION['cart.totalSummary'])
+            ? $_SESSION['cart.totalSummary'] + $good->price
+            : $good->price;
+    }
+}

@@ -11,5 +11,4 @@ export default class Cart {
         console.log(selector);
         this.cart = document.querySelector(selector)
     }
-
 }

@@ -1,21 +1,34 @@
 <?php
 
 namespace app\controllers;
+use app\models\Cart;
 use app\models\Good;
 use yii\web\Controller;
+use Yii;
 
 class CartController extends Controller
 {
-    // действие - Add; представление cart
-//    public function actionAdd($name)
-//    {
-//        $good = new Good();
-//        $good = $good->getOneGood($name);
-//        $this->renderPartial('add', compact('good'));
-//    }
-    public function actionAdd($name) {
+    public function actionOpen()
+    {
+        $session = Yii::$app->session;
+        $session->open();
+//        $session->remove('cart');
+//        $session->remove('cart.totalSummary');
+//        $session->remove('cart.totalQuantity');
+        return $this->renderPartial('add', compact('session'));
+    }
+
+    public function actionAdd($name)
+    {
         $good = new Good();
         $goodResult = $good->getOneGood($name);
-        return $this->renderPartial('add', compact('goodResult'));
+
+        $session = Yii::$app->session;
+        $session->open();
+//        $session->remove('cart');
+        $cart = new Cart();
+        $cart->addToCart($goodResult);
+
+        return $this->renderPartial('add', compact('goodResult', 'session'));
     }
 }
