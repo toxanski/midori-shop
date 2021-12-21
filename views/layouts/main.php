@@ -131,9 +131,35 @@ AppAsset::register($this);
 
                 <div class="flex justify-end pt-2">
                     <button class="modal-clear px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Очистить корзину</button>
+                    <button class="modal-open-order px-4 bg-orange-500 p-3 rounded-lg text-white hover:bg-indigo-400 mr-2">Оформить заказ</button>
                     <button class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">Закрыть</button>
                 </div>
 
+            </div>
+        </div>
+    </div>
+<!--    modal for order-->
+    <div class="modal-order z-10 opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
+        <div class="modal-overlay-order absolute w-full h-full bg-white opacity-95"></div>
+
+        <div class="modal-container fixed w-full h-full z-50 overflow-y-auto ">
+
+            <div class="modal-close-order absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-black text-sm z-50">
+                <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                    <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                </svg>
+                (Esc)
+            </div>
+
+            <div class="modal-content container mx-auto h-auto text-left p-4">
+
+                <div class="flex justify-between items-center pb-2">
+                    <p class="text-2xl font-bold">Оформление заказа: </p>
+                </div>
+
+                <div class="modal-table order-container">
+
+                </div>
             </div>
         </div>
     </div>

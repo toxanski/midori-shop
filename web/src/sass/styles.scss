@@ -281,6 +281,15 @@ body.modal-active {
   overflow-x: hidden;
   overflow-y: visible !important;
 }
+
+.modal-order {
+  transition: opacity 0.25s ease;
+  background-color: lightgreen;
+}
+body.modal-active-order {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}
 .opacity-95 {opacity: .95;}
 
 .footer {
